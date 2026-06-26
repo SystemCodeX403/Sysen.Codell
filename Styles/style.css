@@ -385,9 +385,3 @@ section, header {
     color: #4da3ff;
     transform: scale(1.15);
 }
-
-#social {
-    display: none;
-    min-height: 300px;
-}
-
