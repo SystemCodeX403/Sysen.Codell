@@ -41,11 +41,10 @@ body{
 header{
     text-align:center;
     padding:14vh 4vw;
-background:url("Images/banner.png") center/cover no-repeat;
+    background:url("Images/banner.png") center/cover no-repeat;
     position:relative;
     border-bottom:3px solid #00000055;
 }
-
 
 header::before{
     content:"";
@@ -167,6 +166,102 @@ section{
     backdrop-filter:blur(6px);
 }
 
+/* ---------------- VIDEO GRID ---------------- */
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+    gap:30px;
+}
+
+.video-card{
+    background:#151a24;
+    padding:15px;
+    border-radius:14px;
+    border:1px solid #4da3ff22;
+    box-shadow:0 0 15px #4da3ff22;
+    transition:.25s;
+}
+
+.video-card:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 25px #4da3ff55;
+}
+
+.video-card iframe{
+    width:100%;
+    height:180px;
+    border-radius:10px;
+    border:none;
+}
+
+/* ---------------- SOFTWARE SETUP ---------------- */
+.software-box{
+    background:#151a24;
+    padding:35px;
+    border-radius:18px;
+    border:1px solid #4da3ff22;
+    max-width:700px;
+    margin:auto;
+    box-shadow:0 0 20px #4da3ff22;
+}
+
+.software-box ul{
+    list-style:none;
+    line-height:1.8;
+    font-size:1.15rem;
+}
+
+/* ---------------- GAMES GRID ---------------- */
+.games-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:25px;
+}
+
+.game-card{
+    background:#151a24;
+    padding:20px;
+    border-radius:14px;
+    text-align:center;
+    border:1px solid #4da3ff22;
+    transition:.25s;
+}
+
+.game-card:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px #4da3ff55;
+}
+
+/* ---------------- CONTACT BOX ---------------- */
+.contact-box{
+    background:#151a24;
+    padding:40px;
+    border-radius:18px;
+    border:1px solid #4da3ff22;
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+    box-shadow:0 0 20px #4da3ff22;
+}
+
+.contact-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 32px;
+    background:linear-gradient(135deg,#4da3ff,#1f6fe0);
+    color:white;
+    text-decoration:none;
+    border-radius:12px;
+    font-size:1.15rem;
+    font-weight:600;
+    transition:.25s;
+}
+
+.contact-btn:hover{
+    transform:translateY(-4px) scale(1.05);
+    filter:brightness(1.15);
+}
+
 /* ---------------- FOOTER ---------------- */
 footer{
     text-align:center;
@@ -228,10 +323,52 @@ Second Channel
         </p>
         <br>
         <p>
-I’ve been inspired by many different content creators over the years, and that inspiration pushed me to develop my own style of creation.</p>
+        I’ve been inspired by many different content creators over the years, and that inspiration pushed me to develop my own style of creation.
+        </p>
     </div>
 
 </div>
+</section>
+
+<!-- ---------------- SOFTWARE SETUP ---------------- -->
+<section class="fade">
+    <h2 class="section-title">Software I Use</h2>
+
+    <div class="software-box">
+        <ul>
+            <li><strong>Recording:</strong> OBS Studio</li>
+            <li><strong>Streaming:</strong> OBS Studio</li>
+            <li><strong>Editing:</strong> DaVinci Resolve Studio</li>
+            <li><strong>Thumbnail Editing:</strong> Affinity</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ---------------- GAMES I PLAY ---------------- -->
+<section class="fade">
+    <h2 class="section-title">Games I Play</h2>
+
+    <div class="games-grid">
+        <div class="game-card">VRChat</div>
+        <div class="game-card">Hytale</div>
+        <div class="game-card">Dead by Daylight</div>
+        <div class="game-card">Phasmophobia</div>
+        <div class="game-card">Roblox</div>
+        <div class="game-card">Nevenness To Evenness</div>
+    </div>
+</section>
+
+<!-- ---------------- CONTACT ---------------- -->
+<section class="fade">
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-box">
+        <p>reach out anytime.</p>
+
+        <a class="contact-btn" href="mailto:Sysen.Arlo.Codell@outlook.com">
+            Sysen.Arlo.Codell@outlook.com
+        </a>
+    </div>
 </section>
 
 <footer>
