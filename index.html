@@ -3,14 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- FIXED CSS PATH -->
-<link rel="stylesheet" href="styles/style.css">
-
+<link rel="stylesheet" href="Styles/style.css">
 <title>Sysen Arlo Codell</title>
-
-<style>
-/* ---------------- GLOBAL ---------------- */
+<style>/* ---------------- GLOBAL ---------------- */
 *{
     margin:0;
     padding:0;
@@ -22,14 +17,14 @@ body{
     background:#0d0f16;
     color:white;
     overflow-x:hidden;
-    margin-left:260px;
+    margin-left:260px; /* shift content right for sidebar */
 }
 
 /* ---------------- HEADER ---------------- */
 header{
     text-align:center;
     padding:6vh 4vw;
-    background:url(images/banners/Banner.png) center/cover no-repeat;
+    background:url(../Images/Banners/Banner.png) center/cover no-repeat;
     position:relative;
     border-bottom:3px solid #00000055;
 }
@@ -219,119 +214,46 @@ section{
     box-shadow:0 0 15px #4da3ff55;
 }
 
-/* ---------------- GEAR IMAGE ---------------- */
-.gear-image-wrap{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:15px 0;
+/* ---------------- GAMES GRID ---------------- */
+.games-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:25px;
 }
 
-.gear-image{
-    width:100%;
-    max-width:420px;
-    border-radius:18px;
-    border:2px solid #4da3ff55;
-    box-shadow:0 0 25px #4da3ff33;
-    cursor:pointer;
-    transition:.25s;
-}
-
-.gear-image:hover{
-    transform:scale(1.03);
-    box-shadow:0 0 35px #4da3ff66;
-}
-
-/* ---------------- FULLSCREEN VIEWER ---------------- */
-#image-viewer{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.65);
-    backdrop-filter:blur(4px);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:999999;
-}
-
-#image-viewer img{
-    max-width:90%;
-    max-height:90%;
-    border-radius:12px;
-    box-shadow:0 0 40px #000;
-}
-
-#close-viewer{
-    position:absolute;
-    top:25px;
-    right:35px;
-    font-size:2.5rem;
-    color:white;
-    cursor:pointer;
-    font-weight:bold;
-    text-shadow:0 0 10px black;
-    transition:.2s;
-}
-
-#close-viewer:hover{
-    color:#4da3ff;
-    transform:scale(1.15);
-}
-
-/* ---------------- SIDEBAR ---------------- */
-#sidebar{
-    position:fixed;
-    top:0;
-    left:0;
-    width:260px;
-    height:100vh;
-    background:#11141c;
-    border-right:2px solid #4da3ff55;
-    padding:30px 20px;
-    box-shadow:0 0 25px #4da3ff22;
-    z-index:9999;
-}
-
-.side-title{
-    color:#d6e2ff;
-    font-size:1.8rem;
-    margin-bottom:25px;
+.game-card{
+    background:#151a24;
+    padding:20px;
+    border-radius:14px;
     text-align:center;
-}
-
-.side-links{
-    list-style:none;
-    padding:0;
-}
-
-.side-links li{
-    margin:18px 0;
-}
-
-.side-links a{
-    color:white;
-    text-decoration:none;
-    font-size:1.25rem;
-    padding:10px 14px;
-    display:block;
-    border-radius:10px;
     border:1px solid #4da3ff22;
     transition:.25s;
 }
 
-.side-links a:hover{
-    background:#4da3ff33;
-    transform:translateX(6px);
+.game-card:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px #4da3ff55;
 }
 
-/* ---------------- PAGE SWITCHING ---------------- */
-section, header{
-    display:none;
+/* ---------------- CONTACT BOX ---------------- */
+.contact-box{
+    background:#151a24;
+    padding:40px;
+    border-radius:18px;
+    border:1px solid #4da3ff22;
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+    box-shadow:0 0 20px #4da3ff22;
 }
 
-/* Show home by default (GitHub fix) */
-#home{
-    display:block;
+/* ---------------- FOOTER ---------------- */
+footer{
+    text-align:center;
+    padding:45px 20px;
+    color:#8b95a8;
+    font-size:1rem;
+    border-top:1px solid #ffffff15;
 }
 
 /* ---------------- ANIMATIONS ---------------- */
@@ -340,13 +262,145 @@ section, header{
     50%{box-shadow:0 0 25px #4da3ff;}
     100%{box-shadow:0 0 10px #4da3ff55;}
 }
+
+/* ---------------- SIDEBAR MENU (ALWAYS VISIBLE) ---------------- */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: #11141c;
+    border-right: 2px solid #4da3ff55;
+    padding: 30px 20px;
+    box-shadow: 0 0 25px #4da3ff22;
+    z-index: 9999;
+}
+
+.side-title {
+    color: #d6e2ff;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.side-links {
+    list-style: none;
+    padding: 0;
+}
+
+.side-links li {
+    margin: 18px 0;
+}
+
+.side-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.25rem;
+    padding: 10px 14px;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid #4da3ff22;
+    transition: 0.25s;
+}
+
+.side-links a:hover {
+    background: #4da3ff33;
+    transform: translateX(6px);
+}
+
+/* ---------------- REMOVE MENU BUTTON ---------------- */
+#menu-btn {
+    display: none;
+}
+
+/* ---------------- PAGE SWITCHING ---------------- */
+section, header {
+    display: none;
+}
+.gear-image-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.gear-image {
+    width: 100%;
+    max-width: 420px; /* adjust this number to make it bigger or smaller */
+    border-radius: 18px;
+    border: 2px solid #4da3ff55;
+    box-shadow: 0 0 25px #4da3ff33;
+    object-fit: cover;
+}
+/* GEAR IMAGE */
+.gear-image-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.gear-image {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 18px;
+    border: 2px solid #4da3ff55;
+    box-shadow: 0 0 25px #4da3ff33;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.gear-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 35px #4da3ff66;
+}
+
+/* FULLSCREEN VIEWER */
+#image-viewer {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+#image-viewer img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 40px #000;
+}
+
+/* CLOSE BUTTON */
+#close-viewer {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    text-shadow: 0 0 10px black;
+    transition: 0.2s;
+}
+
+#close-viewer:hover {
+    color: #4da3ff;
+    transform: scale(1.15);
+}
 </style>
 </head>
 <body>
 
+    
 <!-- SIDEBAR MENU -->
 <nav id="sidebar">
     <h2 class="side-title">Menu</h2>
+
     <ul class="side-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About Me</a></li>
@@ -356,32 +410,37 @@ section, header{
 </nav>
 
 <!-- HOME PAGE -->
-<header id="home">
-    <img class="avatar" src="images/icons/Icon.png" alt="Profile">
+<header id="home" class="fade">
+    <img class="avatar" src="Images/Icons/Icon.png" alt="Profile">
     <h1>Sysen Arlo Codell</h1>
-    <p class="tagline">I love creating gameplay content and creativity whether that's streaming or recording :D</p>
 
-    <div class="mini-socials">
+    <p class="tagline">
+        I love creating gameplay content and creativity whether that's streaming or recording :D
+    </p>
+
+    <div class="mini-socials fade">
         <a href="https://www.youtube.com/channel/UCKgXrIfDnrRcfkJ9iuXGNQg?sub_confirmation=1" target="_blank">
-            <img src="images/icons/youtube.png">
+            <img src="Images/Icons/youtube.png">
         </a>
+
         <a href="https://www.youtube.com/channel/UCyHlZJU60PQWaQfRnzUYrcg?sub_confirmation=1" target="_blank">
-            <img src="images/icons/youtube.png">
+            <img src="Images/Icons/youtube.png">
         </a>
+
         <a href="https://www.youtube.com/@Sysen.Arlo.Codell" target="_blank">
-            <img src="images/icons/facebook.png">
+            <img src="Images/Icons/facebook.png">
         </a>
     </div>
 </header>
 
 <!-- ABOUT PAGE -->
-<section id="about">
+<section id="about" class="fade">
     <h2 class="section-title">About Me</h2>
 
     <div class="about-grid">
 
         <div class="about-photo-wrap">
-            <img class="about-photo" src="images/people/Sysen.jpg" alt="Image of Sysen Arlo Codell">
+            <img class="about-photo" src="Images/People/Sysen.jpg" alt="Image of Sysen Arlo Codell">
         </div>
 
         <div class="card about">
@@ -415,7 +474,7 @@ section, header{
 </section>
 
 <!-- SETUP PAGE -->
-<section id="setup">
+<section id="setup" class="fade">
     <h2 class="section-title">Software & My Setup</h2>
 
     <div class="two-column">
@@ -423,26 +482,28 @@ section, header{
         <div class="software-box">
             <h3 class="sub-title">Software I Use</h3>
             <ul class="software-list">
-                <li><img src="images/icons/OBS.png"><strong>Recording:</strong> OBS Studio</li>
-                <li><img src="images/icons/obs.png"><strong>Streaming:</strong> OBS Studio</li>
-                <li><img src="images/icons/DaVinci.png"><strong>Editing:</strong> DaVinci Resolve Studio</li>
-                <li><img src="images/icons/Affinity.png"><strong>Thumbnail Editing:</strong> Affinity</li>
+                <li><img src="Images/Icons/OBS.png"><strong>Recording:</strong> OBS Studio</li>
+                <li><img src="Images/Icons/obs.png"><strong>Streaming:</strong> OBS Studio</li>
+                <li><img src="Images/Icons/DaVinci.png"><strong>Editing:</strong> DaVinci Resolve Studio</li>
+                <li><img src="Images/Icons/Affinity.png"><strong>Thumbnail Editing:</strong> Affinity</li>
             </ul>
         </div>
 
-        <div class="software-box">
-            <h3 class="sub-title">My Gear Setup</h3>
+<div class="software-box">
+    <h3 class="sub-title">My Gear Setup</h3>
 
-            <div class="gear-image-wrap">
-                <img class="gear-image" src="images/banners/Setup.jpg" alt="My Gear Setup">
-            </div>
-        </div>
+    <div class="gear-image-wrap">
+        <img class="gear-image" src="Images/Banners/Setup.jpg" alt="My Gear Setup">
+    </div>
+</div>
 
-        <!-- FULLSCREEN IMAGE VIEWER -->
-        <div id="image-viewer">
-            <span id="close-viewer">✕</span>
-            <img id="viewer-img" src="">
-        </div>
+<!-- FULLSCREEN IMAGE VIEWER -->
+<div id="image-viewer">
+    <span id="close-viewer">✕</span>
+    <img id="viewer-img" src="">
+</div>
+
+
 
         <div class="software-box">
             <h3 class="sub-title">PC Specs</h3>
@@ -458,20 +519,20 @@ section, header{
 </section>
 
 <!-- SOCIAL PAGE -->
-<section id="social">
+<section id="social" class="fade">
     <h2 class="section-title">Social Links</h2>
 
-    <div class="mini-socials">
+    <div class="mini-socials fade">
         <a href="https://www.youtube.com/channel/UCKgXrIfDnrRcfkJ9iuXGNQg?sub_confirmation=1" target="_blank">
-            <img src="images/icons/youtube.png">
+            <img src="Images/Icons/youtube.png">
         </a>
 
         <a href="https://www.youtube.com/channel/UCyHlZJU60PQWaQfRnzUYrcg?sub_confirmation=1" target="_blank">
-            <img src="images/icons/youtube.png">
+            <img src="Images/Icons/youtube.png">
         </a>
 
         <a href="https://www.youtube.com/@Sysen.Arlo.Codell" target="_blank">
-            <img src="images/icons/facebook.png">
+            <img src="Images/Icons/facebook.png">
         </a>
     </div>
 </section>
@@ -480,44 +541,42 @@ section, header{
 <footer>
 © 2026 𝓢𝔂𝓼𝓽𝓮𝓶𝕮𝖔𝖉𝖊𝖃𝟜𝟘𝟛
 </footer>
-
 <script>
-// PAGE SWITCHING
-const links = document.querySelectorAll(".side-links a");
-const sections = document.querySelectorAll("section, header");
+<!-- PAGE SWITCHING SCRIPT -->
+    // PAGE SWITCHING (unchanged)
+    const links = document.querySelectorAll(".side-links a");
+    const sections = document.querySelectorAll("section, header");
 
-links.forEach(link => {
-    link.addEventListener("click", e => {
-        e.preventDefault();
-        const target = link.getAttribute("href").substring(1);
-        sections.forEach(sec => sec.style.display = "none");
-        document.getElementById(target).style.display = "block";
+    links.forEach(link => {
+        link.addEventListener("click", e => {
+            e.preventDefault();
+            const target = link.getAttribute("href").substring(1);
+            sections.forEach(sec => sec.style.display = "none");
+            document.getElementById(target).style.display = "block";
+        });
     });
-});
 
-// Default page
-sections.forEach(sec => sec.style.display = "none");
-document.getElementById("home").style.display = "block";
+    sections.forEach(sec => sec.style.display = "none");
+    document.getElementById("home").style.display = "block";
 
-// IMAGE VIEWER
-const gearImg = document.querySelector(".gear-image");
-const viewer = document.getElementById("image-viewer");
-const viewerImg = document.getElementById("viewer-img");
-const closeViewer = document.getElementById("close-viewer");
+    // IMAGE VIEWER
+    const gearImg = document.querySelector(".gear-image");
+    const viewer = document.getElementById("image-viewer");
+    const viewerImg = document.getElementById("viewer-img");
+    const closeViewer = document.getElementById("close-viewer");
 
-gearImg.onclick = () => {
-    viewerImg.src = gearImg.src;
-    viewer.style.display = "flex";
-};
+    gearImg.onclick = () => {
+        viewerImg.src = gearImg.src;
+        viewer.style.display = "flex";
+    };
 
-closeViewer.onclick = () => {
-    viewer.style.display = "none";
-};
+    closeViewer.onclick = () => {
+        viewer.style.display = "none";
+    };
 
-viewer.onclick = (e) => {
-    if (e.target === viewer) viewer.style.display = "none";
-};
-</script>
-
+    viewer.onclick = (e) => {
+        if (e.target === viewer) viewer.style.display = "none";
+    };
+    </script>
 </body>
 </html>
