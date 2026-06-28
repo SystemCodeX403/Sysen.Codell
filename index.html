@@ -538,10 +538,11 @@
     </p>
 
     <div class="hero-tags">
-      <span class="tag">Vlogs</span>
+      <span class="tag">Modder</span>
       <span class="tag">Gaming</span>
       <span class="tag">Coding</span>
-      <span class="tag">Behind the scenes</span>
+      <span class="tag">Lets playss</span>
+      <span class="tag">100% adchivements</span>
     </div>
 
     <div class="hero-actions">
@@ -589,9 +590,8 @@
       <div class="about-card">
         <div>
           <h2>About me</h2>
-          <p id="about-text">
-            I’m a creator who loves sharing honest moments, random ideas, and the process of figuring life out.
-            My channel is where I experiment, connect, and document the journey.
+             <p id="about-text">
+            Hi my name is Sysen Arlo Codell im 21 and love content creation for my viewers. I do lets plays for a gaming channel and my favorite things to do is be creative with my work
           </p>
           <ul class="about-list">
             <li><strong>Started YouTube:</strong> <span id="about-start">2026</span></li>
@@ -605,30 +605,11 @@
               This site is built just for my channel—so if you’re here, you’re already part of the story.
             </p>
           </div>
-          <div class="stats">
-            <div class="stat">
-              <div class="stat-label">Subscribers</div>
-              <div class="stat-value" id="stat-subs">1,234</div>
-            </div>
-            <div class="stat">
-              <div class="stat-label">Total views</div>
-              <div class="stat-value" id="stat-views">56,789</div>
-            </div>
-            <div class="stat">
-              <div class="stat-label">Videos</div>
-              <div class="stat-value" id="stat-videos">42</div>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </section>
 
     <div class="nav-cta" style="padding:0; border:none;">
 </div>
-<iframe
-  src="https://www.youtube.com/subscribe_embed?channelid=UCKgXrIfDnrRcfkJ9iuXGNQg"
-  style="height:48px; width:200px; border:none; overflow:hidden; border-radius:12px;"
-></iframe>
 
 
     <!-- PLAYLIST -->
@@ -695,11 +676,6 @@
       instagramUrl: "https://www.instagram.com/yourhandle",
       started: "Nov 30, 2023",
       vibe: "Low-key, real, and a little chaotic",
-      stats: {
-        subs: "30",
-        views: "56,789",
-        videos: "14",
-      },
   featuredVideo: {
   id: "0Z11QTkJEYU",
         title: "latest upload",
@@ -731,10 +707,6 @@
       document.getElementById("hero-name").textContent = config.yourName;
       document.getElementById("about-start").textContent = config.started;
       document.getElementById("about-vibe").textContent = config.vibe;
-
-      document.getElementById("stat-subs").textContent = config.stats.subs;
-      document.getElementById("stat-views").textContent = config.stats.views;
-      document.getElementById("stat-videos").textContent = config.stats.videos;
 
       // Featured video
       const featuredIframe = document.getElementById("featured-video");
@@ -786,7 +758,6 @@ card.innerHTML = `
 
   <div class="video-info">
     <h3>${video.title}</h3>
-    <p>${video.description}</p>
   </div>
 `;
 
