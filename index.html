@@ -481,6 +481,13 @@
       .nav-cta {
         order: 2;
       }
+      .thumb-frame {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: none;
+  border-radius: 8px;
+  background: #000;
+}
     }
   </style>
 </head>
@@ -666,8 +673,8 @@
         views: "56,789",
         videos: "14",
       },
-      featuredVideo: {
-        id: "VIDEO_ID", // replace with your real video ID
+  featuredVideo: {
+  id: "0Z11QTkJEYU",
         title: "My latest upload",
         length: "10:24",
         date: "2026",
@@ -753,14 +760,22 @@ btnWatchLatest.addEventListener("click", () => {
       config.playlist.forEach((video) => {
         const card = document.createElement("div");
         card.className = "video-card";
-        card.innerHTML = `
-          <div class="thumb"></div>
-          <div class="video-info">
-            <h3>${video.title}</h3>
-            <p>${video.description}</p>
-            <p style="margin-top:0.2rem; font-size:0.75rem; color:#999;">${video.length}</p>
-          </div>
-        `;
+card.innerHTML = `
+  <iframe
+    class="thumb-frame"
+    src="https://www.youtube.com/embed/${video.id}"
+    title="${video.title}"
+    allowfullscreen>
+  </iframe>
+
+  <div class="video-info">
+    <h3>${video.title}</h3>
+    <p>${video.description}</p>
+    <p style="margin-top:0.2rem;font-size:0.75rem;color:#999;">
+      ${video.length}
+    </p>
+  </div>
+`;
         card.addEventListener("click", () => {
           featuredIframe.src = "https://www.youtube.com/embed/" + video.id;
           document.getElementById("featured-title").textContent = video.title;
